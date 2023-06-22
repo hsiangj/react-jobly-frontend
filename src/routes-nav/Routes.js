@@ -3,7 +3,7 @@ import {Route, Switch, Redirect} from 'react-router-dom';
 import Home from '../Home';
 import CompanyList from '../companies/CompanyList';
 import CompanyDetail from '../companies/CompanyDetail';
-import JobList from '../JobList';
+import JobList from '../jobs/JobList';
 import LoginForm from '../LoginForm';
 import SignupForm from '../SignupForm';
 import ProfileForm from '../Profile';

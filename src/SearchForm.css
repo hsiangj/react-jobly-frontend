@@ -19,8 +19,3 @@
   transition-duration: 0.4s;
 }
 
-.SearchForm button:hover {
-  background-color: purple;
-  color: white;
-  font-weight: bold;
-}

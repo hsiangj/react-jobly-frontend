@@ -1,0 +1,18 @@
+.JobCard {
+  width: 70%;
+  padding: .5rem;
+  background-color: white;
+  text-align: left;
+  margin: .5em auto;
+  color: black;
+  line-height: 10pt;
+  padding-top: 0;
+}
+
+.JobCard h5 {
+  padding-top: 5px;
+}
+
+.JobCard p {
+  font-size: small;
+}

@@ -7,18 +7,16 @@ const CompanyList = () => {
   const [companies, setCompanies] = useState();
   const [isLoading, setIsLoading] = useState(true);
  
-
   useEffect(() => {
     function getAllCompanies() {
       search();
-      console.log('RENDERING INSIDE USEEFFECT')
     }
     getAllCompanies();
   }, [])
   
   const search = async (searchTerm) => {
-    let companies = await JoblyApi.getAllCompanies(searchTerm);
-    setCompanies(companies);
+    let result = await JoblyApi.getAllCompanies(searchTerm);
+    setCompanies(result);
     setIsLoading(false);
     
   }
