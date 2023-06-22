@@ -1,6 +1,6 @@
 main {
   width: 100vw;
-  display: flex;
+  /* display: flex; */
   padding-top: 5vh;
   padding-left: 3vh;
   height: calc(100vh - 56px); /* router view - navbar height */

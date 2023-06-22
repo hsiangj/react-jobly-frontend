@@ -1,27 +1,35 @@
 import { useState, useEffect } from "react";
 import JoblyApi from "../api/api";
 import CompanyCard from "./CompanyCard";
+import SearchForm from "../SearchForm";
 
 const CompanyList = () => {
   const [companies, setCompanies] = useState();
   const [isLoading, setIsLoading] = useState(true);
+ 
 
   useEffect(() => {
-    async function getAllCompanies() {
-      let companies = await JoblyApi.getAllCompanies();
-      setCompanies(companies);
-      setIsLoading(false);
+    function getAllCompanies() {
+      search();
+      console.log('RENDERING INSIDE USEEFFECT')
     }
     getAllCompanies();
   }, [])
   
+  const search = async (searchTerm) => {
+    let companies = await JoblyApi.getAllCompanies(searchTerm);
+    setCompanies(companies);
+    setIsLoading(false);
+    
+  }
+
   if (isLoading) {
     return <p>Loading &hellip;</p>
   }
 
   return (
     <div>
-    
+      <SearchForm search={search}/>
       {companies.map(company => 
         <CompanyCard 
           key={company.handle}

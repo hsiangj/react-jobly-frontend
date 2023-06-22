@@ -1,0 +1,26 @@
+.SearchForm {
+  display: block;
+  text-align: center;
+  padding: .3em;
+}
+
+.SearchForm input {
+  width: 50%;
+  margin: 0 5px;
+  border-radius: 5px;
+  padding: 5px;
+} 
+
+.SearchForm button {
+  background-color: white;
+  border-radius: 5px;
+  font-size: 15px;
+  padding: 3px 6px;
+  transition-duration: 0.4s;
+}
+
+.SearchForm button:hover {
+  background-color: purple;
+  color: white;
+  font-weight: bold;
+}
