@@ -1,0 +1,42 @@
+.Login-SignupForm h1 {
+  text-align: center;
+}
+
+.Login-SignupForm label {
+  color: black;
+  font-weight: 500;
+}
+
+.Login-SignupForm input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.Login-SignupForm button {
+  width: 100%;
+  background-color: white;
+  color: purple;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: 1px solid purple;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.Login-SignupForm button:hover {
+  background-color: purple;
+  color: white;
+}
+
+.Login-SignupForm form {
+  margin: 0 auto;
+  border-radius: 5px;
+  background-color: white;
+  padding: 20px;
+  width: 40%;
+}

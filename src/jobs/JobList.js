@@ -17,7 +17,6 @@ const JobList = () => {
   const search = async (searchTerm) => {
     let result = await JoblyApi.getAllJobs(searchTerm);
     setJobs(result);
-    console.log(result[0], result[1])
     setIsLoading(false);
   }
 

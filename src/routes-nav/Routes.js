@@ -4,15 +4,15 @@ import Home from '../Home';
 import CompanyList from '../companies/CompanyList';
 import CompanyDetail from '../companies/CompanyDetail';
 import JobList from '../jobs/JobList';
-import LoginForm from '../LoginForm';
-import SignupForm from '../SignupForm';
+import LoginForm from '../login-signup/LoginForm';
+import SignupForm from '../login-signup/SignupForm';
 import ProfileForm from '../Profile';
 
 
 
 
 
-const Routes = () => {
+const Routes = ({signup, login}) => {
 
  
 
@@ -36,11 +36,11 @@ const Routes = () => {
       </Route>
 
       <Route exact path="/login">
-        <LoginForm />
+        <LoginForm login={login}/>
       </Route>
 
       <Route exact path="/signup">
-        <SignupForm />
+        <SignupForm signup={signup}/>
       </Route>
 
       <Route exact path="/profile">
