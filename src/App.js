@@ -11,7 +11,7 @@ import {decodeToken} from 'react-jwt';
 function App() {
   const [token, setToken] = useState();
   const [currentUser, setCurrentUser] = useState(null);
-  console.log(currentUser);
+  
   async function signup(signupData){
     try {
       let result = await JoblyApi.signup(signupData);
@@ -31,6 +31,11 @@ function App() {
     } catch(err) {
       return {success: false, err};
     }
+  }
+
+  function logout(){
+    setCurrentUser(null);
+    setToken(null);
   }
 
   useEffect(function loadUserInfo(){
@@ -58,9 +63,9 @@ function App() {
       
         <BrowserRouter>
           <UserContext.Provider value={{currentUser, setCurrentUser}}>
-            <Nav />
+            <Nav logout={logout} />
             <main>
-            <Routes signup={signup} login={login}/>
+            <Routes signup={signup} login={login} />
             </main>
           </UserContext.Provider>
         </BrowserRouter>
