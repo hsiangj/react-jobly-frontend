@@ -4,12 +4,13 @@ import UserContext from './UserContext';
 import JoblyApi from './api/api';
 import Routes from './routes-nav/Routes';
 import Nav from './routes-nav/Nav';
+import useLocalStorage from './hooks/useLocalStorage';
 import './App.css';
 import {decodeToken} from 'react-jwt';
 
 
 function App() {
-  const [token, setToken] = useState();
+  const [token, setToken] = useLocalStorage("jobly_token");
   const [currentUser, setCurrentUser] = useState(null);
   
   async function signup(signupData){
@@ -26,7 +27,6 @@ function App() {
     try {
       let token = await JoblyApi.login(loginData);
       setToken(token);
-      console.log(token)
       return {success: true};
     } catch(err) {
       return {success: false, err};
@@ -41,7 +41,6 @@ function App() {
   useEffect(function loadUserInfo(){
     async function getCurrentUser() {
       if (token) {
-        console.log(token)
         try {
           let {username} = decodeToken(token);
           JoblyApi.token = token;
