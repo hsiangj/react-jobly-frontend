@@ -28,14 +28,21 @@ const CompanyList = () => {
   return (
     <div>
       <SearchForm search={search}/>
-      {companies.map(company => 
-        <CompanyCard 
-          key={company.handle}
-          name={company.name}
-          handle={company.handle}
-          description={company.description}
-          logoUrl={company.logoUrl} />
+      {companies.length 
+        ? (
+          companies.map(company => 
+            <CompanyCard 
+              key={company.handle}
+              name={company.name}
+              handle={company.handle}
+              description={company.description}
+              logoUrl={company.logoUrl} />
+            )
+          )
+        : (
+          <p>Sorry, no results found!</p>
         )}
+      
     </div>
   )
 }
