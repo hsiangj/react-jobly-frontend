@@ -6,7 +6,7 @@ import CompanyDetail from '../companies/CompanyDetail';
 import JobList from '../jobs/JobList';
 import LoginForm from '../login-signup/LoginForm';
 import SignupForm from '../login-signup/SignupForm';
-import ProfileForm from '../Profile';
+import ProfileForm from '../profile/Profile';
 import PrivateRoute from './PrivateRoute';
 
 
@@ -38,9 +38,9 @@ const Routes = ({signup, login}) => {
         <SignupForm signup={signup}/>
       </Route>
 
-      <PrivateRoute exact path="/profile">
+      <Route exact path="/profile">
         <ProfileForm />
-      </PrivateRoute>
+      </Route>
 
       <Redirect to="/" />
     </Switch>

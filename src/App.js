@@ -12,6 +12,8 @@ import {decodeToken} from 'react-jwt';
 function App() {
   const [token, setToken] = useLocalStorage("jobly_token");
   const [currentUser, setCurrentUser] = useState(null);
+
+  console.debug('App','Current user=', currentUser)
   
   async function signup(signupData){
     try {
@@ -46,17 +48,20 @@ function App() {
           JoblyApi.token = token;
           let currUser = await JoblyApi.getCurrentUser(username);
           setCurrentUser(currUser);
-          console.log(currUser)
+          
         } catch(err) {
-          console.log('ERROR FOUND')
+          console.error('Error loadUserInfo')
           setCurrentUser(null);
         }
       }
+      
     }
+
+    
     getCurrentUser();
   }, [token]);
 
-
+ 
   return (
     <div className="App">
       

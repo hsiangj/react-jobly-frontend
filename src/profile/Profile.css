@@ -1,0 +1,50 @@
+.Profile h1 {
+  text-align: center;
+}
+
+.Profile label {
+  color: black;
+  font-weight: 500;
+}
+
+.Profile input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.Profile button {
+  width: 100%;
+  background-color: white;
+  color: purple;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: 1px solid purple;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.Profile button:hover {
+  background-color: purple;
+  color: white;
+}
+
+.Profile form {
+  margin: 0 auto;
+  border-radius: 5px;
+  background-color: white;
+  padding: 20px;
+  width: 40%;
+}
+
+.Profile p {
+  background-color: rgb(197, 164, 197);
+  color: black;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 5px;
+}
