@@ -10,8 +10,10 @@ import {decodeToken} from 'react-jwt';
 
 
 function App() {
+  const [infoLoaded, setInfoLoaded] = useState(false);
   const [token, setToken] = useLocalStorage("jobly_token");
   const [currentUser, setCurrentUser] = useState(null);
+  const [jobIdsApplied, setJobIdsApplied] = useState(new Set());
 
   console.debug('App','Current user=', currentUser)
   
@@ -48,25 +50,38 @@ function App() {
           JoblyApi.token = token;
           let currUser = await JoblyApi.getCurrentUser(username);
           setCurrentUser(currUser);
-          
+          setJobIdsApplied(new Set(currUser.applications));
         } catch(err) {
-          console.error('Error loadUserInfo')
+          console.error('Error loadUserInfo', err)
           setCurrentUser(null);
         }
       }
-      
+      setInfoLoaded(true);
     }
-
-    
+    setInfoLoaded(false);
     getCurrentUser();
   }, [token]);
 
- 
+  /** Checks if a job has been applied for. */
+  function hasAppliedToJob(id) {
+    return jobIdsApplied.has(id);
+  }
+
+  function applyToJob(id) {
+    if(hasAppliedToJob(id)) return;
+    JoblyApi.applyToJob(currentUser.username, id);
+    setJobIdsApplied(new Set([...jobIdsApplied, id]));
+  }
+  
+  if (!infoLoaded) {
+    return <p>Loading &hellip;</p>
+  }
+
   return (
     <div className="App">
       
         <BrowserRouter>
-          <UserContext.Provider value={{currentUser, setCurrentUser}}>
+          <UserContext.Provider value={{currentUser, setCurrentUser, hasAppliedToJob, applyToJob}}>
             <Nav logout={logout} />
             <main>
             <Routes signup={signup} login={login} />

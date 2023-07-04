@@ -33,7 +33,9 @@ const CompanyDetail = () => {
       <h4>Jobs available at {name}:</h4>
       {jobs.length
         ? (jobs.map(job =>
-          <JobCard 
+          <JobCard
+          key={job.id}
+          id={job.id} 
           title={job.title} 
           equity={job.equity}
           salary={job.salary} />

@@ -25,13 +25,14 @@ const JobList = () => {
   }
 
   return (
-    <div>
+  <div>
     <SearchForm search={search}/>
     {jobs.length
       ? (
         jobs.map(job => 
           <JobCard 
             key={job.id}
+            id={job.id}
             title={job.title}
             name={job.companyName}
             salary={job.salary}

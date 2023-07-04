@@ -18,6 +18,14 @@ const Routes = ({signup, login}) => {
         <Home />
       </Route>
 
+      <Route exact path="/login">
+        <LoginForm login={login}/>
+      </Route>
+
+      <Route exact path="/signup">
+        <SignupForm signup={signup}/>
+      </Route>
+
       <PrivateRoute exact path="/companies">
         <CompanyList />
       </PrivateRoute>
@@ -30,17 +38,9 @@ const Routes = ({signup, login}) => {
         <JobList />
       </PrivateRoute>
 
-      <Route exact path="/login">
-        <LoginForm login={login}/>
-      </Route>
-
-      <Route exact path="/signup">
-        <SignupForm signup={signup}/>
-      </Route>
-
-      <Route exact path="/profile">
+      <PrivateRoute exact path="/profile">
         <ProfileForm />
-      </Route>
+      </PrivateRoute>
 
       <Redirect to="/" />
     </Switch>

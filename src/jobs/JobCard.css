@@ -16,3 +16,23 @@
 .JobCard p {
   font-size: small;
 }
+
+.JobCard-btn-div {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.JobCard button {
+  width: 8%;
+  background-color: white;
+  color: purple;
+  padding: 5px;
+  border: 1px solid purple;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.JobCard button:hover {
+  opacity: 80%;
+}
