@@ -1,7 +1,7 @@
 import { useState, useContext } from "react";
-import UserContext from "../UserContext";
+import UserContext from "../context/UserContext";
 import JoblyApi from "../api/api";
-import Alert from "../Alert";
+import Alert from "../common/Alert";
 import './Profile.css';
 
 const ProfileForm = () => {

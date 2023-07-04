@@ -1,6 +1,6 @@
 import {useState} from 'react';
 import {useHistory} from 'react-router-dom';
-import Alert from '../Alert';
+import Alert from '../common/Alert';
 import './Login-SignupForm.css';
 
 
